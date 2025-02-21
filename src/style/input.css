@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-lobster: "Lobster", serif;
+  --font-inter: "Inter", serif;
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.box-shadow-inside {
+  box-shadow: #7082461A 0px -70px 36px -28px inset;
+  transition: box-shadow 1s;
+}
+
+.box-shadow-inside:hover {
+  box-shadow: #7082465b 0px -70px 100px -28px inset;
+}
+
+.inset-shadow-green {
+  box-shadow: #6CC63F1A 0px -70px 70px -28px inset; 
+  transition: box-shadow 1s;
+}
+
+.inset-shadow-green:hover {
+  box-shadow: #6cc63f7e 0px -70px 100px -28px inset; 
+}
+
+.inset-shadow-red {
+  box-shadow: #CC261B1A 0px -70px 70px -28px inset;
+  transition: box-shadow 1s;
+}
+
+.inset-shadow-red:hover {
+  box-shadow: #cc271b72 0px -70px 100px -28px inset;
+}
+
+.inset-shadow-yellow {
+  box-shadow: #F09E001A 0px -70px 36px -28px inset;
+  transition: box-shadow 1s;
+}
+
+.inset-shadow-yellow:hover {
+  box-shadow: #f09c005f 0px -70px 100px -28px inset;
+}
+
+.inset-shadow-bl {
+  box-shadow: #0000000D 0px -70px 36px -28px inset;
+  transition: box-shadow 1s;
+}
+
+.inset-shadow-bl:hover {
+  box-shadow: #00000047 0px -70px 100px -28px inset;
+}

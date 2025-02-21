@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project</title>
+  <link rel="stylesheet" href="/src/style/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="border-b-1 border-b-gray-200">
+    <nav class="flex justify-between items-center h-[80px] w-[92%] mx-auto">
+      <div class="logo-page">
+        <h1 class="font-lobster text-[1.5rem] sm:text-3xl">Foodieland<span class="text-amber-600">.</span></h1>
+      </div>
+  
+      <div class="hidden sm:flex sm:static absolute md:min-h-fit min-h-[60vh] left-0 top-[10%] md:w-auto w-full justify-end px-5">
+        <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+          <li><a class="hover:text-gray-500 text-[#FF6363]" href="#home">Home</a></li>
+          <li><a class="hover:text-gray-500" href="recipes.html">Recipes</a></li>
+          <li><a class="hover:text-gray-500" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-gray-500" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-gray-500" href="404.html">About us</a></li>
+        </ul>
+      </div>
+  
+      <div class="hidden sm:flex gap-6 justify-end">
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="mx-[4%] font-inter">
+    <!-- Home Section -->
+    <section class="w-full relative my-10 md:h-[640px] rounded-[3rem] overflow-hidden flex flex-col md:flex-row bg-[#E7FAFE]">
+      <div class="w-full md:w-1/2 py-10 px-6 md:px-12 flex flex-col justify-center">
+        <div class="w-[156px] h-[45px] bg-white rounded-3xl flex items-center justify-center gap-2">
+          <img class="size-6" src="./image/general/hot-recipe.png" alt="hot recipes">
+          <p class="text-sm">Hot Recipes</p>
+        </div>
+        <h1 class="text-4xl font-semibold md:text-6xl my-5">Spicy delicious chicken wings</h1>
+        <p class="text-gray-500 max-w-[480px] mb-5 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <div class="flex gap-2 mb-[100px]">
+          <div class="flex gap-2 items-center justify-center bg-[rgba(0,0,0,0.05)] w-[139px] h-[40px] rounded-[30px]">
+            <img class="w-6 h-6 object-cover" src="./image/general/timer.svg" alt="timer">
+            <p class="text-sm text-gray-500">30 Minutes</p>
+          </div>
+          <div class="flex gap-2 items-center justify-center bg-[#0000000D] w-[139px] h-[40px] rounded-[30px]">
+            <img class="w-6 h-6 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+            <p class="text-sm text-gray-500">Chicken</p>
+          </div>
+        </div>
+
+        <div class="w-full flex items-center justify-between">
+          <div class="flex gap-4 h-[50px]">
+            <img class="w-[50px] h-[50px] rounded-full" src="./image/general/profile.png" alt="profile">
+            <div class="items-center">
+              <h3 class="font-bold">John Smith</h3>
+              <p class="text-sm text-gray-500">15 March 2022</p>
+            </div>
+          </div>
+          <button class="flex justify-center items-center bg-black w-[200px] h-[60px] text-white rounded-2xl">
+            <span class="text-sm mr-3">View Recipes</span>
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 h-[300px] md:h-full">
+        <img class="w-full h-full object-cover" src="./image/general/chicken-wings.svg" alt="chicken wings">
+      </div>
+
+      <img class="absolute left-[50%] top-1/5 -translate-1/2" src="./image/general/handpicked.svg" alt="handpicked recipes">
+    </section>
+
+    <!-- Categories Section -->
+    <section class="w-full my-12">
+      <div class="flex justify-between mt-30 mb-6">
+        <h2 class="text-3xl font-medium">Categories</h2>
+        <a class="bg-[#E7FAFE] flex items-center py-3 px-5 rounded-2xl font-medium" href="#view-all-categries">View All Categories</a>
+      </div>
+      <div class="flex justify-between w-full overflow-auto gap-5">
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl transform box-shadow-inside animate-fade-in">
+            <div class="absolute left-10 top-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/rice.png" alt="breakfast">
+              <p class="font-medium text-lg mt-7 text-center">Breakfast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl inset-shadow-green animate-fade-in">
+            <div class="absolute left-10 top-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/cabbage.png" alt="vegetable">
+              <p class="font-medium text-lg mt-7 text-center">Vegan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl inset-shadow-red animate-fade-in">
+            <div class="absolute left-10 top-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/meat.png" alt="meat">
+              <p class="font-medium text-lg mt-7 text-center">Meat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl inset-shadow-yellow animate-fade-in">
+            <div class="absolute left-10 top-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/cake.png" alt="dessert">
+              <p class="font-medium text-lg mt-7 text-center">Dessert</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl inset-shadow-bl animate-fade-in">
+            <div class="absolute left-10 mt-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/sandwich.png" alt="lunch">
+              <p class="font-medium text-lg mt-7 text-center">Lunch</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-20">
+          <div class="group min-w-[180px] h-[152px] relative inset-shadow-sm rounded-2xl inset-shadow-bl animate-fade-in">
+            <div class="absolute left-10 mt-[-50px]">
+              <img class="w-[100px] h-[100px] object-cover group-hover:-translate-y-5 transition-all duration-500" src="./image/categories/chocolate.png" alt="chocolate">
+              <p class="font-medium text-lg mt-7 text-center">Chocolate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foods Section -->
+    <section class="w-full my-[120px]">
+      <h2 class="font-medium text-4xl text-center mt-20">Simple and tasty recipes</h2>
+      <p class="w-[600px] text-sm text-gray-500 mb-5 text-center mx-auto my-5">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+
+      <div class="grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6 mt-12">
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image1" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image1" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-[#FF6363] peer-checked:text-gray-200 transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/cheeseburger.svg" alt="cheeseburger">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Big and Juicy Wagyu Beef Cheeseburger</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Snack</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image2" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image2" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-gray-200 peer-checked:text-[#FF6363] transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/salmon.svg" alt="salmon">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Fresh Lime Roasted Salmon with Ginger Sauce</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Fish</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image3" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image3" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-gray-200 peer-checked:text-[#FF6363] transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/pancake.svg" alt="pancake">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Strawberry Oatmeal Pancake with Honey Syrup</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Breakfast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image4" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image4" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-[#FF6363] peer-checked:text-gray-200 transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/mayonnaise-salad.svg" alt="salad">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Fresh and Healthy Mixed Mayonnaise Salad</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Healthy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image5" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image5" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-gray-200 peer-checked:text-[#FF6363] transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/chicken-meatballs.svg" alt="meatball">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Chicken Meatballs with Cream Cheese</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Meat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px]">
+          <img class="w-full h-full object-cover" src="./image/tastyFood/healthy-food.svg" alt="healthy-food">
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image6" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image6" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-[#FF6363] peer-checked:text-gray-200 transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/fruity-pancake.svg" alt="fruity pancake">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">Fruity Pancake with Orange & Blueberry</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Sweet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image7" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image7" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-gray-200 peer-checked:text-[#FF6363] transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/chicken-rice.svg" alt="chicken rice">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">The Best Easy One Pot Chicken and Rice</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Snack</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-[434px] relative bg-gradient-to-t from-[#E7F9FD] to-[#ffffff] rounded-3xl p-4">
+          <label for="image8" class="w-[48px] h-[48px] bg-white rounded-[50%] right-8 top-8 absolute flex items-center justify-center">
+            <input type="checkbox" id="image8" class="sr-only peer">
+            <i class="fa-solid fa-heart text-2xl text-gray-200 peer-checked:text-[#FF6363] transition-all"></i>
+          </label>
+          <img class="w-full h-[250px] object-cover rounded-3xl" src="./image/tastyFood/pasta.svg" alt="pasta">
+          <h3 class="text-[24px] w-[352px] font-semibold my-3">The Creamiest Creamy Chicken and Bacon Pasta</h3>
+          <div class="flex gap-2 mt-6">
+            <div class="flex gap-3">
+              <img class="w-5 h-5 object-cover" src="./image/general/timer.svg" alt="timer">
+              <p class="text-sm text-gray-500">30 Minutes</p>
+            </div>
+            <div class="flex gap-2">
+              <img class="w-5 h-5 object-cover" src="./image/general/fork-and-knife.png" alt="fork and knife">
+              <p class="text-sm text-gray-500">Noodles</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="w-full h-[597px] flex flex-col lg:flex-row justify-between my-20">
+      <div class="w-full lg:w-[50%] flex flex-col justify-center px-4 lg:px-0">
+        <h3 class="text-3xl lg:text-5xl w-[526px] font-medium leading-tight">Everyone can be a chef in their own kitchen</h3>
+        <p class="w-[508px] text-gray-500 my-6 lg:my-8 text-base lg:text-lg">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+        <a class="w-fit py-5 px-12 text-sm mt-11 bg-black text-white rounded-2xl" href="#">Learn More</a>
+      </div>
+      <div class="group w-[50%] relative bg-gradient-to-t from-[#E7F9FD] to-[#fff] from rounded-3xl">
+        <img class="w-full h-full object-cover" src="./image/general/chef.png" alt="chef">
+        <img class="w-[50px] h-[50px] object-cover absolute bottom-20 left-[-20px] group-hover:-translate-y-5 transition-all duration-500" src="./image/general/tomato.png" alt="tomato">
+        <img class="w-[50px] h-[50px] object-cover absolute right-38 top-25 group-hover:-translate-y-5 transition-all duration-500" src="./image/general/onion.png" alt="onion">
+        <img class="w-[80px] h-[80px] object-center absolute top-12 left-12 group-hover:translate-y-5 transition-all duration-500" src="./image/categories/meat.png" alt="meat">
+        <img class="w-[80px] h-[80px] object-cover absolute top-40 right-5 group-hover:translate-y-5 transition-all duration-500" src="./image/categories/cabbage.png" alt="cabbage">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="mx-[4%]">
+    <div class="flex justify-between font-inter">
+      <div class="w-[50%]">
+        <h1 class="font-lobster text-[1.5rem] sm:text-3xl mb-5">Foodieland<span class="text-amber-600">.</span></h1>
+        <p class="text-gray-500 ">Lorem ipsum dolor sit amet, consectetuipisicing elit, </p>
+      </div>
+      <nav class="flex items-center">
+        <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-5">
+          <li><a class="hover:text-gray-500" href="#">Recipes</a></li>
+          <li><a class="hover:text-gray-500" href="#">Blog</a></li>
+          <li><a class="hover:text-gray-500" href="#">Contact</a></li>
+          <li><a class="hover:text-gray-500" href="#">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mt-10 flex justify-between items-center h-[90px] border-t-1 border-t-gray-200">
+      <div></div>
+      <p class="text-gray-500 text-[18px]">&copy; 2020 Flowbase. Powered by <span class="text-[#E07A5F]">Webflow</span></p>
+      <div class="hidden sm:flex gap-6 justify-end">
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+        <svg class="size-4 sm:size-4 md:size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
